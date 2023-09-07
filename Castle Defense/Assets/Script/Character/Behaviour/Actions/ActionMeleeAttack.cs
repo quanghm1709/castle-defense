@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionMeleeAttack : MonoBehaviour
+[CreateAssetMenu(menuName = "AI/Actions/Meele Attack", fileName = "MeeleAttack")]
+public class ActionMeleeAttack : AIAction
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public override void Action(StateController controller)
+	{
+		Attack(controller);
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private void Attack(StateController controller)
+	{
+		// Stop
+		controller.CharacterMovement.SetHorizontal(0f);
+		controller.CharacterMovement.SetVertical(0f);
+
+		// Attack
+		//controller.CharacterWeapon.CurrentWeapon.UseWeapon();
+	}
 }
+
