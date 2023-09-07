@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DecisiobAttackComplete : MonoBehaviour
+[CreateAssetMenu(menuName = "AI/Decisions/Attack Completed", fileName = "DecisionAttackCompleted")]
+public class DecisiobAttackComplete : AIDecision
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public override bool Decide(StateController controller)
+	{
+		return AttackCompleted(controller);
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private bool AttackCompleted(StateController controller)
+	{
+		//if (controller.CharacterWeapon.CurrentWeapon.GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).length
+		//> controller.CharacterWeapon.CurrentWeapon.GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime)
+		//{
+		//	return true;
+		//}
+
+		return false;
+	}
 }
+
