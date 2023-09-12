@@ -12,8 +12,6 @@ public class StateController : MonoBehaviour
 	[SerializeField] private AIState currentState;
 	[SerializeField] private AIState remainState;
 
-	[Header("Field Of View")]
-	[SerializeField] private Light2D fieldOfView;
 
 	/// <summary>
 	/// Returns the target of this Enemy
@@ -24,13 +22,6 @@ public class StateController : MonoBehaviour
 	/// Returns a reference to this enemy movement
 	/// </summary>
 	public CharacterMovement CharacterMovement { get; set; }
-
-	/// <summary>
-	/// Returns a reference to this enemy path
-	/// </summary>
-	//public Path Path { get; set; }
-
-	public Light2D FieldOfView => fieldOfView;
 
 	public Transform Player { get; set; }
 
@@ -47,7 +38,7 @@ public class StateController : MonoBehaviour
 		//Path = GetComponent<Path>();
 		Collider2D = GetComponent<Collider2D>();
 
-		Player = GameObject.FindWithTag("Player").transform;
+		//Player = GameObject.FindWithTag("Player").transform;
 		//PlayerHealth = Player.GetComponent<Health>();
 	}
 

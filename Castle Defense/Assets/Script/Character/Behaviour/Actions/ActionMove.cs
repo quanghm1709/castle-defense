@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionMove : MonoBehaviour
+[CreateAssetMenu(menuName = "AI/Actions/Move", fileName = "ActionMove")]
+public class ActionMove : AIAction
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public float minDistanceToFollow = 1f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public override void Action(StateController controller)
+	{
+		FollowTarget(controller);
+	}
+
+	private void FollowTarget(StateController controller)
+	{
+		controller.CharacterMovement.SetHorizontal(-1);
+	}
+
 }

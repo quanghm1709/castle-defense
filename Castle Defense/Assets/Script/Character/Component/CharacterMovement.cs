@@ -25,7 +25,7 @@ public class CharacterMovement : CharacterComponent
 	{
 		base.HandleAbility();
 		MoveCharacter();
-		UpdateAnimations();
+		//UpdateAnimations();
 	}
 
 	/// <summary>

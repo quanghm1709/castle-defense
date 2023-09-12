@@ -11,7 +11,7 @@ public class AIState : ScriptableObject
 	public void EvaluateState(StateController controller)
 	{
 		DoActions(controller);
-		EvaluateTransitions(controller);
+		//EvaluateTransitions(controller);
 	}
 
 	public void DoActions(StateController controller)
